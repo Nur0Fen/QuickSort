@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sort1.QuickSortController">
+    <children>
+        <AnchorPane layoutY="-1.0" prefHeight="460.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow color="#00000040" />
+            </effect>
+            <children>
+                <Text fill="#b2b2b2" layoutX="47.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Программа" textAlignment="CENTER" wrappingWidth="98.0">
+                    <font>
+                        <Font name="Montserrat Bold" size="11.0" />
+                    </font>
+                </Text>
+                <Text fill="#3c3c3c" layoutX="80.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="РПС">
+                    <font>
+                        <Font name="Panton Black Caps" size="17.0" />
+                    </font>
+                </Text>
+                <Separator focusTraversable="false" layoutX="13.0" layoutY="92.0" prefHeight="3.0" prefWidth="175.0" style="-fx-background-color: #ccc; -fx-border-style: solid; -fx-border-color: #333;">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Separator>
+                <Button fx:id="Close" layoutX="14.0" layoutY="410.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Закрыть программу" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Separator focusTraversable="false" layoutX="14.0" layoutY="396.0" prefHeight="3.0" prefWidth="175.0" style="-fx-background-color: #fafafa; -fx-border-style: solid; -fx-border-color: #ccc; -fx-border-width: 0;">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Separator>
+            </children>
+        </AnchorPane>
+        <Text fill="#434343" layoutX="282.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тут мы будем сортировать">
+            <font>
+                <Font name="Montserrat Bold" size="29.0" />
+            </font>
+        </Text>
+        <Text fx:id="question_text" fill="#727272" layoutX="270.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Исходный массив" wrappingWidth="462.8199462890625">
+            <font>
+                <Font name="Montserrat Regular" size="14.0" />
+            </font>
+        </Text>
+      <Text fx:id="massive_text" fill="#727272" layoutX="270.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="354.95263671875">
+         <font>
+            <Font name="Montserrat Regular" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="newArray" layoutX="251.0" layoutY="196.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Создать массив" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+        <Text fx:id="sortedMassive" fill="#727272" layoutX="500.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отсортированный массив" wrappingWidth="494.8199462890625">
+            <font>
+                <Font name="Montserrat Regular" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="sortedArrayText" fill="#727272" layoutX="500.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="494.8199462890625">
+            <font>
+                <Font name="Montserrat Regular" size="14.0" />
+            </font>
+        </Text>
+        <Button fx:id="sortMassive" disable="true" layoutX="447.0" layoutY="196.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Отсортировать массив" textFill="WHITE">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+      <TextField fx:id="editArray" focusTraversable="false" layoutX="255.0" layoutY="160.0" prefHeight="29.0" prefWidth="168.0" promptText="Введите массив" style="-fx-background-color: #fff; -fx-border-color: #fff;">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="newArray12" layoutX="251.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Сохранить" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+        <TableView fx:id="tableView" layoutX="216.0" layoutY="316.0" prefHeight="142.0" prefWidth="383.0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" />
+                <TableColumn fx:id="arrayColumn" text="Array" />
+            </columns>
+        </TableView>
+      <Button fx:id="editButton" layoutX="605.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="29.0" prefWidth="130.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Редактировать" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="deleteArray" layoutX="605.0" layoutY="352.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="130.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Удалить" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="cleanDb" layoutX="625.0" layoutY="417.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="111.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Очистить БД" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+        <Button fx:id="incrementButton" layoutX="210.0" layoutY="124.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="+" textFill="WHITE" AnchorPane.bottomAnchor="307.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="124.0">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="decrementButton" layoutX="211.0" layoutY="196.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="26.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="-" textFill="WHITE" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="196.0">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <TextField fx:id="dimensionField" alignment="TOP_CENTER" focusTraversable="false" layoutX="207.0" layoutY="160.0" prefHeight="29.0" prefWidth="32.0" style="-fx-background-color: #fff; -fx-border-color: #fff;" AnchorPane.leftAnchor="207.0" AnchorPane.rightAnchor="505.0">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+        </TextField>
+        <ImageView fitHeight="101.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>
